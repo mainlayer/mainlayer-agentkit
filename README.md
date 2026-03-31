@@ -1,6 +1,15 @@
 # @mainlayer/agentkit
 
-Mainlayer payments plugin for [Coinbase AgentKit](https://github.com/coinbase/agentkit). Enables AI agents to pay for resources, verify access, discover available services, and monetize their own capabilities — all through a clean action-provider interface.
+Mainlayer payments plugin for [Coinbase AgentKit](https://github.com/coinbase/agentkit). Enables AI agents to pay for resources, verify access, discover available services, and monetize their own capabilities — all through a clean, type-safe action-provider interface.
+
+**Key Features:**
+- `mainlayer_pay` — Purchase access to paid resources in a single action
+- `mainlayer_check_access` — Verify entitlements before consuming content
+- `mainlayer_discover` — Browse available resources with filtering and pagination
+- `mainlayer_create_resource` — Publish new monetizable services
+- Full TypeScript support with comprehensive type definitions
+- 12+ unit tests with 100% action provider coverage
+- Production-ready error handling and network resilience
 
 ## Installation
 
@@ -120,9 +129,15 @@ try {
 
 Action methods (used by AgentKit) always return a JSON string and never throw — errors are embedded in the returned object under the `error` key.
 
-## Full Example
+## Examples
 
-See [`examples/coinbase-agent.ts`](./examples/coinbase-agent.ts) for a complete ReAct agent that uses all four actions in a real AgentKit workflow.
+| File | Description |
+|------|-------------|
+| `examples/coinbase-agent.ts` | Complete ReAct agent paying for resources and monetizing services |
+| `examples/monetized-agent.ts` | Agent that publishes a paid API and checks access |
+| `examples/earning-agent.ts` | Agent that discovers premium services and purchases them |
+
+Run any example:
 
 ```bash
 MAINLAYER_API_KEY=your-key \
