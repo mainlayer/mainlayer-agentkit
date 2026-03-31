@@ -153,7 +153,7 @@ npm run typecheck
 
 ## API
 
-Base URL: `https://api.mainlayer.xyz`
+Base URL: `https://api.mainlayer.fr`
 
 Authentication: `Authorization: Bearer <api_key>`
 

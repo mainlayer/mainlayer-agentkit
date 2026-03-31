@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.mainlayer.xyz'
+const BASE_URL = 'https://api.mainlayer.fr'
 
 export interface MainlayerResource {
   id: string
