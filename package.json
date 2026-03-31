@@ -1,0 +1,64 @@
+{
+  "name": "@mainlayer/agentkit",
+  "version": "1.0.0",
+  "description": "Mainlayer payments plugin for Coinbase AgentKit — enable AI agents to pay for resources and monetize their own services",
+  "keywords": [
+    "mainlayer",
+    "coinbase",
+    "agentkit",
+    "ai-agent",
+    "payments",
+    "action-provider"
+  ],
+  "homepage": "https://mainlayer.xyz",
+  "bugs": {
+    "url": "https://github.com/mainlayer/mainlayer-agentkit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mainlayer/mainlayer-agentkit.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "build:watch": "tsc --project tsconfig.json --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint src tests --ext .ts",
+    "lint:fix": "eslint src tests --ext .ts --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "peerDependencies": {
+    "@coinbase/agentkit": ">=0.1.0"
+  },
+  "devDependencies": {
+    "@coinbase/agentkit": "^0.1.0",
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
